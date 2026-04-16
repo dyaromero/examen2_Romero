@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane prefHeight="215.0" prefWidth="600.0"
+         tabClosingPolicy="UNAVAILABLE"
+         xmlns:fx="http://javafx.com/fxml/1"
+         xmlns="http://javafx.com/javafx/13"
+         fx:controller="co.edu.poli.examen2_Romero.controlador.ControlFormCard">
+
+    <tabs>
+
+        <!-- ================= CONSULTAR ================= -->
+        <Tab text="Consultar">
+            <content>
+                <AnchorPane>
+                    <children>
+
+                        <Button fx:id="bttConsulta"
+                                layoutX="314.0" layoutY="38.0"
+                                onAction="#pressConsulta"
+                                text="Consulta" />
+
+                        <TextField fx:id="txtNumero1"
+                                   layoutX="127.0" layoutY="38.0"
+                                   promptText="Número inmueble" />
+
+                        <TextArea fx:id="txtAreaResultado"
+                                  layoutX="69.0" layoutY="78.0"
+                                  prefHeight="76.0" prefWidth="462.0"
+                                  editable="false" />
+
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <!-- ================= CREAR ================= -->
+        <Tab text="Crear">
+            <content>
+                <AnchorPane>
+                    <children>
+
+                        <!-- Fila 1: número, fecha, propietario -->
+                        <TextField fx:id="txtNumero2"
+                                   layoutX="46.0" layoutY="50.0"
+                                   promptText="Número inmueble" />
+
+                        <DatePicker fx:id="datepk"
+                                    layoutX="225.0" layoutY="50.0"
+                                    prefWidth="150.0" />
+
+                        <ComboBox fx:id="cmbPropietario"
+                                  layoutX="408.0" layoutY="50.0"
+                                  prefWidth="150.0"
+                                  promptText="Propietario" />
+
+                        <!-- Fila 2: tipo de inmueble -->
+                        <RadioButton fx:id="radioCasa"
+                                     layoutX="225.0" layoutY="100.0"
+                                     selected="true"
+                                     text="Casa">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="tipo"/>
+                            </toggleGroup>
+                        </RadioButton>
+
+                        <RadioButton fx:id="radioApartamento"
+                                     layoutX="350.0" layoutY="100.0"
+                                     text="Apartamento"
+                                     toggleGroup="$tipo"/>
+
+                        <!-- Fila 3: extra y botón -->
+                        <TextField fx:id="txtExtra"
+                                   layoutX="46.0" layoutY="140.0"
+                                   promptText="Pisos / Número piso" />
+
+                        <Button fx:id="bttCreacion"
+                                layoutX="408.0" layoutY="136.0"
+                                onAction="#pressCreacion"
+                                text="Crear" />
+
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+    </tabs>
+</TabPane>
